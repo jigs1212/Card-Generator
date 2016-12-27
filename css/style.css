@@ -15,11 +15,26 @@ img, video, object, embed { max-width: 100%; height: auto; }
 
 /* @General styles ***/
 html {
-    border-top: 2px solid #fff;
     background:url("../images/bg.png") repeat-x #fff;
 }
+
+@font-face {
+	font-family: "opensans";
+	src: url("../fonts/OpenSans_Regular.ttf");
+}
+
+@font-face {
+	font-family: "opensanslight";
+	src: url("../fonts/OpenSans_Light.ttf");
+}
+
+@font-face {
+	font-family: "Font Awesome";
+	src: url("../fonts/fontawesome.ttf");
+}
+
 body {
-    font-family: Ubuntu,OpenSansLight,Arial,Tahoma,Ubuntu,"Sans serif";
+    font-family: "opensanslight";
     color: #333;
     word-wrap: break-word;
     margin: 0;
@@ -32,8 +47,17 @@ body {
     color: #000000;
 }
 
+.content {
+
+}
+main  {
+  flex: 1;
+}
 #page{
     text-align: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 #gen-html-textarea {
@@ -49,8 +73,10 @@ body {
 }
 
 #gen-template-frame {
-    height: 227px;
-    width: 388px;
+    width: 439px;
+    height: 259px;
+    margin: 0 auto;
+    border: 0;
 }
 
 #gen-template-back-frame {
@@ -70,6 +96,11 @@ body {
     margin-bottom: 10px;
     padding: 6px 20px;
     text-align: right;
+    border-top: 2px solid #fff;
+}
+
+#header #tabzilla {
+  margin-top: -6px;
 }
 
 
@@ -162,4 +193,41 @@ body {
     display: inline-block;
     font-size: 13px;
     padding: 2px;
+}
+
+.iframe-holder {
+  position: relative;
+  width: 439px;
+  margin: 0 auto;
+}
+
+.upload-avatar {
+  display: block;
+  position: absolute;;
+  top: 55px;
+  left: 60px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-avatar.show,
+.upload-avatar:hover {
+  opacity: 0.9;
+}
+
+.upload-icon {
+  font-family: "Font Awesome";
+  font-size: 50px;
+  color: rgba(255, 100, 58, 0.8);
+}
+
+.upload-avatar .notification {
+  color: rgba(255, 100, 58, 0.8);
+  font-size: 11px;
+  text-shadow: 0px 0px 2px #727171;
+  margin-top: -7px;
+}
+
+.upload-avatar input {
+  display: none;
 }
